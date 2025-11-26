@@ -1,0 +1,381 @@
+/* search-results.css */
+
+/* Main content wrapper - add left margin to account for sidebar */
+.main-content {
+  margin-left: 240px; /* Match sidebar width */
+  width: calc(100% - 240px);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.search-results-container {
+  max-width: 1000px; /* Increased from 800px for better spacing */
+  margin: 40px auto;
+  padding: 0 40px; /* Increased padding */
+}
+
+.search-header {
+  margin-bottom: 30px;
+}
+
+.search-header h1 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.search-meta {
+  color: #999;
+  font-size: 14px;
+}
+
+.product-result-card {
+  background: #1a1d23;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+}
+
+.product-result-card:hover {
+  border-color: #3be585;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 229, 133, 0.2);
+  background: #1f2229;
+}
+
+.product-result-image {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #2a2d35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.product-result-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-result-image .placeholder {
+  color: #666;
+  font-size: 48px;
+}
+
+.product-result-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.product-result-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.product-result-category {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.product-result-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.eco-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.eco-badge.high {
+  background: rgba(59, 229, 133, 0.15);
+  color: #3be585;
+  border: 1px solid rgba(59, 229, 133, 0.3);
+}
+
+.eco-badge.medium {
+  background: rgba(255, 209, 102, 0.15);
+  color: #ffd166;
+  border: 1px solid rgba(255, 209, 102, 0.3);
+}
+
+.eco-badge.low {
+  background: rgba(255, 106, 106, 0.15);
+  color: #ff6a6a;
+  border: 1px solid rgba(255, 106, 106, 0.3);
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+  background: #1a1d23;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.no-results i {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.3;
+  color: #666;
+}
+
+.no-results h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.no-results p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #3be585;
+  color: #002314;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background: #2bc970;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 229, 133, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .search-results-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-header h1 {
+    font-size: 22px;
+  }
+
+  .product-result-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .product-result-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .product-result-name {
+    font-size: 18px;
+  }
+
+  .no-results {
+    padding: 60px 20px;
+  }
+
+  .no-results i {
+    font-size: 48px;
+  }
+
+  .no-results h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-results-container {
+    padding: 0 15px;
+    margin: 20px auto;
+  }
+
+  .product-result-card {
+    padding: 16px;
+  }
+
+  .product-result-name {
+    font-size: 16px;
+  }
+
+  .product-result-category {
+    font-size: 13px;
+  }
+
+  .eco-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Loading state styling */
+.muted {
+  color: #999;
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+}
+
+/* ---------- Sidebar alignment overrides (paste at end of search-results.css) ---------- */
+
+/* ensure main-content accounts for the sidebar width defined in homepage.css (250px) */
+.main-content {
+  margin-left: 250px;   /* match .sidebar { width: 250px } in homepage.css */
+  width: calc(100% - 250px);
+  padding: 24px 32px;
+  box-sizing: border-box;
+}
+
+/* remove homepage absolute offsets that push content visually off-center */
+.top-bar {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  padding: 12px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* breadcrumb should sit inside main-content flow */
+.breadcrumb {
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 8px 0 24px 0;
+  padding-left: 0;
+  font-size: 15px;
+}
+
+/* page-section: remove weird transforms/left/top offsets */
+.page-section {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 auto 24px auto;
+  max-width: 1200px;
+  padding: 8px 0;
+}
+
+/* page title layout */
+.page-section h1,
+h1 {
+  margin: 0 0 12px 0 !important;
+  text-align: left;
+  transform: none !important;
+  font-size: 28px;
+}
+
+/* input row: center within main-content and remove forced translateX */
+.input-container {
+  transform: none !important;
+  position: relative !important;
+  margin: 0 auto 12px auto;
+  max-width: 980px;
+  padding-left: 0;
+  justify-content: flex-start;
+}
+
+/* suggestions dropdown sizing: align with input inside container */
+.search-wrapper .suggestions-dropdown {
+  width: 100% !important;
+  left: 0 !important;
+  max-width: 980px;
+}
+
+/* submit/go button: revert absolute transform */
+.page-section .submit-button {
+  transform: none !important;
+  position: relative !important;
+  margin-left: 12px;
+}
+
+/* disclaimer: do not offset */
+.disclaimer {
+  margin-left: 0 !important;
+  text-align: left;
+}
+
+/* footer: normal flow and left-aligned within main-content */
+.main-footer {
+  position: relative !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 40px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* make sure the search container is centered inside main-content */
+.search-results-container {
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1100px;
+}
+
+/* small improvement: ensure product-result cards never overlap sidebar */
+.product-result-card {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* responsiveness: when viewport smaller than sidebar collapse behavior */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 20px;
+  }
+  .search-wrapper .suggestions-dropdown { width: 100%; }
+}

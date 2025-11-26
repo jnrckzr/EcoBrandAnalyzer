@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin-settings.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>EcoBrand - Admin / Settings</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+   <nav>
+        <div class="sidebar">
+            <img src="Logo.png" class="logo"><label>EcoBrand</label> <hr class="line">
+            <div class="li-button">
+                <ul>
+                    <li class="nav-item" id="nav-dashboard">
+                        <button class="dashBoard" data-page="adminpage.html">
+                            <i class="fa fa-dashboard" style="size: 16px; margin-right: 10px;"></i>Dashboard
+                        </button>
+                    </li>
+
+                    <p class="management-text">MANAGEMENT</p>
+                    <li class="nav-item" id="nav-products">
+                        <button class="Products" data-page="products.html">
+                            <i class="fa fa-shopping-bag" style="size: 16px; margin-right: 10px;"></i>Products
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-notification">
+                        <button class="Notification" data-page="notification.html">
+                            <i class="fa fa-bell-o" style="size: 16px; margin-right: 10px;"></i>Notification
+                        </button>
+                    </li>
+
+                    <li class="nav-item" id="nav-news">
+                        <button class="news" data-page="news.html">
+                            <i class="fa fa-plus" style="size: 16px; margin-right: 10px;"></i>Add News  
+                        </button>
+                    </li>
+
+                    <p class="manage-account-text">MANAGE ACCOUNTS</p>
+                    <li class="nav-item" id="nav-users">
+                        <button class="Users" data-page="users.html">
+                            <i class="fa fa-user" style="size: 16px; margin-right: 10px;"></i>Users
+                        </button>
+                    </li>
+                    
+                    <p class="others-text">OTHERS</p>
+                    <li class="nav-item" id="nav-Settings">
+                        <button class="adminSettings" data-page="admin-settings.html">
+                        <i class="fa fa-gear" style="size: 16px; margin-right: 10px;"></i>Settings
+                        </button>
+                    </li><br>
+
+                </ul>
+            </div>
+
+            <div class="bottom">
+                <button class="signout" data-page="logout">
+                    <i class="fa fa-sign-out" style="margin-right: 2px;"></i>Sign out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="top-bar">
+            <div class="user-profile-dropdown">
+                <i class="fa fa-gear" style="font-size: 20px; color: #aaa; margin-right: 5px;"></i>
+                <i class="fa fa-bell" style="font-size: 20px; color: #aaa; margin-right: 5px;"></i>
+                <span id="topBarUserName" class="topUser">User</span><i class="fa fa-caret-down" style="position: relative; left: -17px; top: 2px; color: black;"></i>
+            </div>
+        </div>
+
+            <nav class="breadcrumb">
+                    <span>Admin&nbsp;</span>
+                    <span>/&nbsp;Others&nbsp;</span>
+                    <span>/&nbsp;Settings</span>
+                </nav>
+
+            <div class="infos">
+            <h1 class="title">Settings</h1>
+            <p class="info-title">View and manage your password here.</p>
+            </div>
+
+            <div class="settings-card">
+                <div class="settings-inside">
+                    <h2 class="cp">Change Password</h2>
+                    <p class="info">Update your account password to keep it secure.</p>
+                    <input type="password" class="current-password" id="currentPassword" name="currentPassword" placeholder="Current Password"><br>
+                    <input type="password" class="password" id="password" name="password" placeholder="New Password"><br>
+                    <input type="password" class="confirm-pass" id="confirmPassword" name="confirmPassword" placeholder="Confirm New Password"><br>
+                    <button type="submit" class="save-changes" id="saveChanges" name="saveChanges"><i class="fa fa-check" style="margin-right: 5px;"></i>Save Changes</button>
+                    <button type="submit" class="delete" id="Delete" name="Delete"><i class="fa fa-trash" style="margin-right: 5px;"></i>Delete Account</button>
+                </div>
+
+                    <div class="info-tips">
+                        <h3 class="tips"><i class="fa fa-question-circle-o" style="margin-right: 5px;"></i>Helpful Tips</h3>
+                        <ul>
+                        <li>Make sure your new password is strong (at least 8 characters, with numbers and special characters).</li>
+                        <li>Avoid using common phrases or easily guessed words for added security.</li>
+                        <li>If you forget your password, you can always reset it from the login screen.</li>
+                        </ul>
+                    </div>
+            </div>
+
+
+        <footer class="main-footer">
+            <p class="arr">&copy; EcoBrand 2025. All rights reserved.</p>
+            <p class="version">Version 1.0.0 Hexade</p>
+        </footer>
+    </main>
+ 
+
+</body>
+<script src="adminsidebar.js"></script>
+<script src="admin-settings.js"></script>
+</html>

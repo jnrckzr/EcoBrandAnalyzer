@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoBrand • Search Results</title>
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="search-results.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="sidebar">
+        <img src="Logo.png" class="logo" /><label>EcoBrand</label>
+        <hr class="line" />
+        <div class="li-button">
+          <ul>
+            <li class="nav-item" id="nav-home">
+              <button class="home" data-page="homepage.html">
+                <i class="fa fa-home" style="size: 16px; margin-right: 10px"></i
+                >Home
+              </button>
+            </li>
+            <li class="nav-item" id="nav-environmental-news">
+              <button class="news" data-page="environmental-news.html">
+                <i
+                  class="fa fa-newspaper-o"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Environmental News
+              </button>
+            </li>
+            <li class="nav-item" id="nav-profile">
+              <button class="profile" data-page="profile.html">
+                <i
+                  class="fa fa-user-circle-o"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Profile
+              </button>
+            </li>
+            <li class="nav-item" id="nav-categories">
+              <button class="categories" data-page="categories.html">
+                <i
+                  class="fa fa-recycle"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Categories
+              </button>
+            </li>
+            <li class="nav-item" id="nav-settings">
+              <button class="settings" data-page="settings.html">
+                <i class="fa fa-gear" style="size: 16px; margin-right: 10px"></i
+                >Settings
+              </button>
+            </li>
+            <br />
+            <div class="products-list">
+              <h4 class="label_menu" aria-label="No products yet.">PRODUCTS</h4>
+              <p id="noProductsMessage">No products yet.</p>
+              <ul id="productList"></ul>
+            </div>
+          </ul>
+        </div>
+        <div class="bottom">
+          <button class="new">+ New Product</button><br />
+          <button class="signout" data-page="logout">
+            <i class="fa fa-sign-out" style="margin-right: 2px"></i>Sign out
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <div class="user-profile-dropdown">
+          <a href="settings.html" style="color: #aaa; margin-right: 5px">
+            <i class="fa fa-gear" style="font-size: 20px"></i>
+          </a>
+          <button
+            id="notification-button"
+            style="
+              background: none;
+              border: none;
+              padding: 0;
+              cursor: pointer;
+              color: #aaa;
+            "
+          >
+            <i
+              class="fa fa-bell"
+              style="font-size: 20px; margin-right: 10px"
+            ></i>
+          </button>
+          <span id="topBarUserName" class="topUser">User</span>
+        </div>
+      </div>
+
+      <div class="search-results-container">
+        <div class="search-header">
+          <h1>Search Results for "<span id="searchQuery"></span>"</h1>
+          <p class="search-meta">
+            <span id="resultCount">0</span> products found
+          </p>
+        </div>
+
+        <div id="resultsContainer"></div>
+      </div>
+
+      <footer class="main-footer">
+        <p class="arr">&copy; EcoBrand 2025. All rights reserved.</p>
+        <p class="version">Version 1.0.0 Hexade</p>
+      </footer>
+    </main>
+
+    <script src="sidebar.js"></script>
+    <script src="userNotifications.js"></script>
+    <script src="navigation.js"></script>
+    <script src="search-results.js"></script>
+  </body>
+</html>

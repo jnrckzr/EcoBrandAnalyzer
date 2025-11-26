@@ -1,0 +1,820 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171717;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment:fixed;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+html{ scroll-behavior:smooth; }
+  ::selection{ background:rgba(59,229,133,.25); color:#fff; }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, #2bd1f0, #3be585); border-radius:8px; }
+  ::-webkit-scrollbar-track{ background: rgba(255,255,255,0.05); }
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    width: calc(100% - 250px);
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 90px;
+}
+
+.line {
+    width: 220px;
+    position: relative;
+    top: 60px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.364);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(202, 195, 195, 0.436);
+    border-radius: 0px 15px 15px 0px;
+    background-color: #1d1d1d;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    position: absolute;
+    left: 0;
+}
+
+.li-button button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    font-size: 16px;
+    background-color: #17171700;
+    color: white;
+    position: relative;
+    top: 40px;
+    right: 30px;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.li-button button:focus {
+    background-color: #00d084;
+    color: black;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    width: 220px;
+    text-align: center;
+}
+
+.bottom button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.new {
+    background-color: rgb(52, 210, 58);
+    color: black;
+    font-weight: 300;
+    border: 1px solid rgba(255, 255, 255, 0.488);
+    transition: .3s ease-in;
+}
+
+.new:hover {
+    background-color: rgb(47, 245, 54);
+    border: 1px solid black;
+}
+
+.signout {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid white;
+    font-weight: 300;
+    transition: .3s ease-in;
+}
+
+.signout:hover {
+    background-color: #3d3b3b;
+}
+
+.products-list {
+    position: absolute;
+    font-size: 16px;
+    top: 285px;
+    right: 15px;
+    width: 200px; /* Tiyakin na may nakatakdang lapad */
+}
+
+/* **KRITIKAL: Ito ang nag-a-apply ng scrollbar sa listahan** */
+#productList {
+    /* Override ang default 'ul' position */
+    position: relative; 
+    left: 0;
+    padding: 0; /* Alisin ang default padding ng UL */
+    margin: 0; /* Alisin ang default margin */
+
+    /* KRITIKAL: Limitahan ang taas. Ito ang magti-trigger ng scroll. */
+    max-height: 180px; 
+    
+
+    /* KRITIKAL: I-enable ang vertical scrollbar kapag lumampas sa taas */
+    overflow-y: auto; 
+
+    /* Iwasan ang horizontal scroll */
+    overflow-x: hidden;
+    
+}
+
+#productList::-webkit-scrollbar {
+    width: 6px; /* Gawing mas manipis */
+    
+}
+
+/* 2. Tinutukoy ang background color ng track (ang lugar kung saan gumagalaw ang scrollbar) */
+#productList::-webkit-scrollbar-track {
+    background: #171717; /* Darkest background */
+    border-radius: 10px;
+}
+
+/* 3. Tinutukoy ang kulay at hugis ng thumb (ang mismong bar) */
+#productList::-webkit-scrollbar-thumb {
+    background: #00d084; /* Kulay-abo na mas madilim */
+    border-radius: 10px;
+}
+
+/* 4. Kapag naka-hover ang mouse sa thumb */
+#productList::-webkit-scrollbar-thumb:hover {
+    background: #666; /* Bahagyang gagaan ang kulay */
+}
+
+#productList li {
+    /* Tiyakin na ang list item ay tama ang style */
+    display: block; 
+    padding: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Tiyakin na ang `noProductsMessage` ay nasa loob pa rin ng `products-list` */
+#noProductsMessage {
+    margin-left: 20px;
+}
+/* ---------------------------- */
+
+.label_menu {
+    /* (Wala itong pagbabago) */
+    color: rgba(255, 255, 255, 0.451);
+    font-weight: normal;
+}
+
+.top-bar {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    top: -30px;
+    left: 1000px;
+    padding: 20px;
+}
+
+
+.topUser {
+    background-color: #39d185;
+    padding: 6px 22px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+ }
+
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -63px;
+    left: 0px;
+    font-size: 16px;
+    color: #ffffffa1;
+}
+
+.nav-item.active button {
+    background-color: #00d084;
+    color: black;
+    border-radius: 10px;
+}
+
+.infos {
+    text-align: left;
+    position: relative;
+    top: -80px;
+    left: 0px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 0;
+    color: white;
+    margin-top:40px;
+}
+
+.info-title {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, 0.725);
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.title-bar h2 {
+    margin: 0;
+}
+
+.dashboard-container {
+    position: relative;
+    top: -85px;
+    height: fit-content;
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 30px;
+    background-color: #242424;
+    border-radius: 7px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls label {
+    position: static !important;
+    font-size: 14px;
+}
+
+.entries-select {
+    background-color: #1717174f;
+    color: white;
+    font-size: 12px;
+}
+
+.entries-select option {
+    background-color: #171717;
+}
+
+.product-table {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+.searchbar {
+    top: -15px;
+    left: 750px;
+    font-size: 14px;
+    background-color: #1717174f;
+    color: white;
+}
+
+.searchbar::placeholder {
+    color: white;
+}
+
+.product-table th,
+.product-table td {
+    text-align: center;
+    padding: 2px;
+    border-bottom: 1px solid #333;
+}
+
+.product-table th {
+    color: #999;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.impact-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+}
+
+.moderate {
+    background-color: orange;
+}
+
+.low {
+    background-color: green;
+}
+
+.high {
+    background-color: red;
+}
+
+.eco-score {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: black;
+    background-color: #4CAF50;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    background-color: #555;
+}
+
+.pagination-btn.disabled {
+    border-color: #2b2b2b;
+    background-color: #242424;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.page-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+.moderate-dashboard-container {
+    position: relative;
+    top: -85px;
+    height: fit-content;
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 30px;
+    background-color: #242424;
+    border-radius: 7px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.moderate-searchbar {
+    top: -15px;
+    left: 750px;
+    font-size: 14px;
+    background-color: #1717174f;
+    color: white;
+}
+
+.moderate-searchbar::placeholder {
+    color: white;
+}
+
+.moderate-product-table th,
+.moderate-product-table td {
+    text-align: center;
+    padding: 2px;
+    border-bottom: 1px solid #333;
+}
+
+.moderate-product-table th {
+    color: #999;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.moderate-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.moderate-controls label {
+    position: static !important;
+    font-size: 14px;
+}
+
+.moderate-entries-select {
+    background-color: #1717174f;
+    color: white;
+    font-size: 12px;
+}
+
+.moderate-entries-select option {
+    background-color: #171717;
+}
+
+.moderate-product-table {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+.mpagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.mpagination-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.mpagination-btn:hover:not(.disabled) {
+    background-color: #555;
+}
+
+.mpagination-btn.disabled {
+    border-color: #2b2b2b;
+    background-color: #242424;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.mpage-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+.high-dashboard-container {
+    position: relative;
+    top: -85px;
+    height: fit-content;
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 30px;
+    background-color: #242424;
+    border-radius: 7px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.high-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.high-controls label {
+    position: static !important;
+    font-size: 14px;
+}
+
+.high-entries-select {
+    background-color: #1717174f;
+    color: white;
+    font-size: 12px;
+}
+
+.high-entries-select option {
+    background-color: #171717;
+}
+
+.high-product-table {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+.high-searchbar {
+    top: -15px;
+    left: 750px;
+    font-size: 14px;
+    background-color: #1717174f;
+    color: white;
+}
+.high-searchbar::placeholder {
+    color: white;
+}
+
+.high-product-table th,
+.high-product-table td {
+    text-align: center;
+    padding: 2px;
+    border-bottom: 1px solid #333;
+}
+
+.high-product-table th {
+    color: #999;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.hpagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.hpagination-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.hpagination-btn:hover:not(.disabled) {
+    background-color: #555;
+}
+
+.hpagination-btn.disabled {
+    border-color: #2b2b2b;
+    background-color: #242424;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.hpage-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+/* Styles for individual notifications */
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Styling for the notification panel */
+#notifications-panel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none; /* Initially hide the panel */
+}
+
+#notifications-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00d084;
+    text-align: center;
+}
+
+#notifications-panel hr {
+    border-color: #444;
+    margin-bottom: 15px;
+}
+
+#notifications-panel p {
+    color: #aaa;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Styles for individual notification items */
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* categories.css */
+
+.product-info-cell .product-img {
+    width: 40px; /* Specific width */
+    height: 40px; /* Specific height */
+    object-fit: contain; /* Para hindi ma-distort ang image, at mag-fit sa box */
+    margin-right: 10px; /* Konting spacing mula sa text */
+    border-radius: 5px; /* Optional: konting rounded corners */
+    display: block; /* Tiyakin na block level element para ma-control ang sizing */
+    flex-shrink: 0; /* Important: Para hindi mag-shrink ang image sa flex container */
+}
+
+/* Optional: Ayusin ang container ng product info kung kailangan */
+.product-info-cell {
+    display: flex; /* Gawing flex container para magtabi ang image at text */
+    align-items: center; /* I-align ang image at text sa gitna horizontally */
+    padding: 8px 0; /* Konting padding */
+}
+
+/* Optional: Para sa text sa tabi ng image */
+.product-info-cell .product-name-text {
+    word-break: break-word; /* Kung mahaba ang product name */
+    font-weight: 500;
+}
+
+/* Maaari mo ring ayusin ang column ng table para sa image */
+.product-table th:first-child,
+.product-table td:first-child {
+    width: 200px; /* Adjust based on your desired layout */
+    min-width: 180px;
+}
+
+/* Add these styles at the end of your categories.css file */
+
+/* Real-time Product Notification */
+.new-product-notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: linear-gradient(135deg, #00d084, #39d185);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 208, 132, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease-out;
+}
+
+.new-product-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.new-product-notification i {
+    font-size: 20px;
+    animation: checkPulse 0.6s ease-in-out;
+}
+
+@keyframes checkPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Optional: Add a subtle pulse animation to the tables when updating */
+@keyframes tableFadeIn {
+    from {
+        opacity: 0.7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.product-table tbody,
+.moderate-product-table tbody,
+.high-product-table tbody {
+    animation: tableFadeIn 0.3s ease-in-out;
+}
