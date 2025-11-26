@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>EcoBrand - Admin / Users</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <div class="sidebar">
+            <img src="Logo.png" class="logo">
+            <label>EcoBrand</label>
+            <hr class="line">
+            <div class="li-button">
+                <ul>
+                    <li class="nav-item" id="nav-dashboard">
+                        <button class="dashBoard" data-page="adminpage.html">
+                            <i class="fa fa-dashboard" style="size: 16px; margin-right: 10px;"></i>Dashboard
+                        </button>
+                    </li>
+
+                    <p class="management-text">MANAGEMENT</p>
+                    <li class="nav-item" id="nav-products">
+                        <button class="Products" data-page="products.html">
+                            <i class="fa fa-shopping-bag" style="size: 16px; margin-right: 10px;"></i>Products
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-notification">
+                        <button class="Notification" data-page="notification.html">
+                            <i class="fa fa-bell-o" style="size: 16px; margin-right: 10px;"></i>Notification
+                        </button>
+                    </li>
+
+                    <li class="nav-item" id="nav-news">
+                        <button class="news" data-page="news.html">
+                            <i class="fa fa-plus" style="size: 16px; margin-right: 10px;"></i>Add News
+                        </button>
+                    </li>
+
+                    <p class="manage-account-text">MANAGE ACCOUNTS</p>
+                    <li class="nav-item" id="nav-users">
+                        <button class="Users" data-page="users.html">
+                            <i class="fa fa-user" style="size: 16px; margin-right: 10px;"></i>Users
+                        </button>
+                    </li>
+                    
+                    <p class="others-text">OTHERS</p>
+                    <li class="nav-item" id="nav-Settings">
+                        <button class="adminSettings" data-page="admin-settings.html">
+                            <i class="fa fa-gear" style="size: 16px; margin-right: 10px;"></i>Settings
+                        </button>
+                    </li><br>
+                </ul>
+            </div>
+
+            <div class="bottom">
+                <button class="signout" data-page="logout">
+                    <i class="fa fa-sign-out" style="margin-right: 2px;"></i>Sign out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="top-bar">
+            <div class="user-profile-dropdown">
+                <i class="fa fa-gear" style="font-size: 20px; color: #aaa; margin-right: 5px;"></i>
+                <i class="fa fa-bell" style="font-size: 20px; color: #aaa; margin-right: 5px;"></i>
+                <span id="topBarUserName" class="topUser">User</span><i class="fa fa-caret-down" style="position: relative; left: -17px; top: 2px; color: black;"></i>
+            </div>
+        </div>
+
+         <nav class="breadcrumb">
+                    <span>Admin&nbsp;</span>
+                    <span>/&nbsp;Manage Accounts&nbsp;</span>
+                    <span>/&nbsp;Users</span>
+                </nav>
+
+                <a href="admin-settings.html" style="color: #aaa; margin-right: 5px;">
+            <i class="fa fa-gear" style="font-size: 20px; transform: translateY(-10px); position: relative; left: 1445px;"></i>
+          </a>
+
+        <div class="infos">
+            <h1 class="title">Users</h1>
+            <p class="info-title">View and manage Users here.</p>
+        </div>
+
+        <div class="user-management-container">
+            <div class="manage-users-header">
+                <h2 class="sub-title">Manage Users</h2>
+            </div>
+            <div class="controls-row">
+                <div class="entries-per-page">
+                    <label for="entries-select" class="epr">Entries per page</label>
+                    <select id="entries-select">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." id="user-search">
+                </div>
+            </div>
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MOBILE NO</th>
+                        <th>DESCRIPTION</th>
+                        <th>LOCATION</th>
+                        <th>ACTIVE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    </tbody>
+            </table>
+
+            <p id="stats-text"></p>
+
+            <div class="pagination-container" id="pagination-controls">
+                <button id="first-page" class="pagination-btn" disabled>
+                    &lt;&lt;
+                </button>
+                <button id="prev-page" class="pagination-btn" disabled>
+                    &lt;
+                </button>
+                <div id="page-numbers">
+                    </div>
+                <button id="next-page" class="pagination-btn" disabled>
+                    &gt;
+                </button>
+                <button id="last-page" class="pagination-btn" disabled>
+                    &gt;&gt;
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="adminsidebar.js"></script>
+    <script src="users.js"></script>
+</body>
+
+</html>

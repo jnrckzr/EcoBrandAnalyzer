@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/signup.css">
+    <title>Sign Up for EcoBrand</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <img src="/Logo.png" class="logo"><label class="ecobrand">EcoBrand</label>
+        <h1>Sign Up</h1>
+        <div class="inside-container">
+            <form action="/register" method="POST" id="signupForm">
+                <div class="input-box">
+                    <label for="fullName">Full Name</label><br>
+                    <input type="text" id="fullName" name="Fullname" class="fn" placeholder="Full Name" required><br>
+
+                    <label for="birthdate">Birthdate</label><br>
+                    <input type="date" id="birthdate" name="Birthdate" class="bd" required><br>
+
+                    <label for="age">Age</label><br>
+                    <input type="number" id="age" name="Age" class="age" placeholder="Age" min="0" required><br>
+
+                    <label for="username">Username</label><br>
+                    <input type="text" id="username" name="Username" class="un" placeholder="Username" required><br>
+
+                    <label for="email">Email Address</label><br>
+                    <input type="email" id="email" name="Emailadd" class="email" placeholder="Email Address" required><br>
+
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password" name="password" class="password" placeholder="Password" required><br>
+
+                    <label for="confirmPassword">Confirm Password</label><br>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="confirm-password" placeholder="Confirm Password" required>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="termsCheckbox" class="check" name="terms" required>
+                    <label for="agreeTerms">Yes, I agree to the <a href="/termsandcondition.html">Terms and Conditions</a></label>
+                </div>
+                <br>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            <div id="formMessage" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+    </div>
+    <script src="/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171717;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+html{ scroll-behavior:smooth; }
+::selection{ background:rgba(59,229,133,.25); color:#fff; }
+
+::-webkit-scrollbar{ width:10px; height:10px; }
+::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, #2bd1f0, #3be585); border-radius:8px; }
+::-webkit-scrollbar-track{ background: rgba(255,255,255,0.05); }
+
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 90px;
+}
+
+.line {
+    width: 220px;
+    position: relative;
+    top: 60px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.364);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(202, 195, 195, 0.436);
+    border-radius: 0px 15px 15px 0px;
+    background-color: #1d1d1d;
+    z-index: 100; /* Tiyakin na nasa ibabaw */
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    position: absolute;
+    left: 0;
+}
+
+.li-button button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    font-size: 16px;
+    background-color: #17171700;
+    color: white;
+    position: relative;
+    top: 40px;
+    right: 30px;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.li-button button:focus {
+    background-color: #00d084;
+    color: black;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    width: 220px;
+    text-align: center;
+}
+
+.bottom button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.new {
+    background-color: rgb(52, 210, 58);
+    color: black;
+    font-weight: 300;
+    border: 1px solid rgba(255, 255, 255, 0.488);
+    transition: .3s ease-in;
+}
+
+.new:hover {
+    background-color: rgb(47, 245, 54);
+    border: 1px solid black;
+}
+
+.signout {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid white;
+    font-weight: 300;
+    transition: .3s ease-in;
+}
+
+.signout:hover {
+    background-color: #3d3b3b;
+}
+
+.products-list {
+    position: absolute;
+    font-size: 16px;
+    top: 285px;
+    right: 15px;
+    width: 200px;
+}
+
+#productList {
+    position: relative; 
+    left: 0;
+    padding: 0; 
+    margin: 0; 
+    max-height: 180px; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+#productList::-webkit-scrollbar {
+    width: 6px; 
+}
+
+#productList::-webkit-scrollbar-track {
+    background: #171717; 
+    border-radius: 10px;
+}
+
+#productList::-webkit-scrollbar-thumb {
+    background: #00d084; 
+    border-radius: 10px;
+}
+
+#productList::-webkit-scrollbar-thumb:hover {
+    background: #666; 
+}
+
+#productList li {
+    display: block; 
+    padding: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#noProductsMessage {
+    margin-left: 20px;
+}
+
+.label_menu {
+    color: rgba(255, 255, 255, 0.451);
+    font-weight: normal;
+}
+
+/* Binago: Tinanggal ang left at ginawang absolute/right ang top-bar */
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5px;
+    left: 1280px;
+    padding: 15px;
+}
+
+ .topUser {
+    background-color: #39d185;
+    padding: 6px 22px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+ }
+
+
+/* Binago: Inalis ang negative top at inayos ang positioning */
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -22px;
+    left: 280px;
+    font-size: 16px;
+    color: #ffffffa1;
+}
+
+.nav-item.active button {
+    background-color: #00d084;
+    color: black;
+    border-radius: 10px;
+}
+
+.infos {
+    text-align: left;
+    position: relative;
+    top: -40px;
+    left: 280px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 0;
+    color: white;
+    margin-top:40px;
+}
+
+.info-title {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, 0.725);
+}
+
+/* Default news-grid: 4 Columns (Desktop) */
+.news-grid {
+    display: grid;
+    position: relative;
+    top: 0px; /* Inayos ang top value */
+    margin-left: 280px;
+    margin-right: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 20px 0;
+    transform: translateY(-30px);
+}
+
+.news-card {
+    background-color: #363333b3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #444;
+}
+
+.news-card h3 {
+    color: #eee;
+    font-size: 1.2em;
+    margin: 15px;
+    min-height: 50px;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.news-card p {
+    color: #aaa;
+    font-size: 0.9em;
+    margin: 0 15px 15px;
+    flex-grow: 1;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #444;
+    margin-top: auto;
+}
+
+.news-footer .read-more {
+    background-color: #00a859;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.news-footer .read-more:hover {
+    background-color: #008f4b;
+}
+
+.latest-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f0ad3e;
+    color: white;
+    padding: 6px 12ox;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    z-index: 20;
+    text-transform: uppercase;
+}
+
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
+
+#notifications-panel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+}
+
+#notifications-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00d084;
+    text-align: center;
+}
+
+#notifications-panel hr {
+    border-color: #444;
+    margin-bottom: 15px;
+}
+
+#notifications-panel p {
+    color: #aaa;
+    text-align: center;
+    font-style: italic;
+}
+
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* --- MEDIA QUERIES PARA SA RESPONSIVENESS --- */
+
+/* Tablet at Medium Screens (mula 1200px pababa) */
+@media (max-width: 1200px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Small Tablets at Landscape Phones (mula 900px pababa) */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Phones (mula 600px pababa) */
+@media (max-width: 600px) {
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-radius: 0;
+    }
+    
+    /* Ayusin ang positioning ng content para magsimula sa kaliwa */
+    .breadcrumb, 
+    .text, 
+    .text-info {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+        margin-left: 20px; 
+        margin-right: 20px; 
+    }
+    
+    .top-bar {
+        right: 0;
+        top: 0;
+    }
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EcoBrand • Product Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="user-products.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="sidebar">
+        <img src="Logo.png" class="logo" /><label>EcoBrand</label>
+        <hr class="line" />
+        <div class="li-button">
+          <ul>
+            <li class="nav-item" id="nav-home">
+              <button class="home" data-page="homepage.html">
+                <i class="fa fa-home" style="size: 16px; margin-right: 10px"></i
+                >Home
+              </button>
+            </li>
+            <li class="nav-item" id="nav-environmental-news">
+              <button class="news" data-page="environmental-news.html">
+                <i
+                  class="fa fa-newspaper-o"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Environmental News
+              </button>
+            </li>
+            <li class="nav-item" id="nav-profile">
+              <button class="profile" data-page="profile.html">
+                <i
+                  class="fa fa-user-circle-o"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Profile
+              </button>
+            </li>
+            <li class="nav-item" id="nav-categories">
+              <button class="categories" data-page="categories.html">
+                <i
+                  class="fa fa-recycle"
+                  style="size: 16px; margin-right: 10px"
+                ></i
+                >Categories
+              </button>
+            </li>
+            <li class="nav-item" id="nav-settings">
+              <button class="settings" data-page="settings.html">
+                <i class="fa fa-gear" style="size: 16px; margin-right: 10px"></i
+                >Settings
+              </button>
+            </li>
+            <br />
+
+            <div class="products-list">
+              <h4 class="label_menu" aria-label="No products yet.">PRODUCTS</h4>
+              <p id="noProductsMessage">No products yet.</p>
+              <ul id="productList"></ul>
+            </div>
+          </ul>
+        </div>
+
+        <div class="bottom">
+          <button class="new">+ New Product</button><br />
+          <button class="signout" data-page="logout">
+            <i class="fa fa-sign-out" style="margin-right: 2px"></i>Sign out
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Top Bar -->
+    <main class="main-content">
+      <div class="top-bar">
+        <div class="user-profile-dropdown">
+          <a href="settings.html" style="color: #aaa; margin-right: 5px">
+            <i class="fa fa-gear" style="font-size: 20px"></i>
+          </a>
+          <button
+            id="notification-button"
+            style="
+              background: none;
+              border: none;
+              padding: 0;
+              cursor: pointer;
+              color: #aaa;
+            "
+          >
+            <i class="fa fa-bell" style="font-size: 20px; margin-right:15px;"></i>
+          </button>
+          <span id="topBarUserName" class="topUser">User</span>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="homepage.html">Home&#160;</a>
+        <span> / </span>
+        <a href="user-products.html">&#160;Products&#160;</a>
+        <span> / </span>
+        <span id="breadcrumb-product">Loading...</span>
+      </nav>
+
+      <!-- Page Section -->
+      <main class="page-section">
+        <!-- Search -->
+        <form id="productSearchForm" class="input-container" role="search">
+          <input
+            id="productQuery"
+            class="product-input"
+            type="text"
+            placeholder="Ask EcoBrand"
+            aria-label="Search products"
+          />
+          <button class="submit-button" type="submit">Go</button>
+        </form>
+
+        <!-- Cards row -->
+        <section class="cards-row">
+          <!-- Product Info -->
+          <article class="product-info-card card" aria-live="polite">
+            <h3 class="info-title">Product Summary</h3>
+            <p class="view-title">View the full product summary here.</p>
+            <div class="product-image">
+              <img id="product-main-image" src="" alt="Product image" />
+            </div>
+            <p>
+              <strong>Product Name:</strong>
+              <span id="product-name">Loading...</span>
+            </p>
+            <p>
+              <strong>Category:</strong>
+              <span id="product-category">Loading...</span>
+            </p>
+            <p>
+              <strong>Analysis Date:</strong>
+              <span id="analysis-date">Loading...</span>
+            </p>
+
+            <!-- ✅ NEW: Ingredients -->
+            <div id="ingredients-block">
+              <p><strong>Ingredients:</strong></p>
+              <ul id="product-ingredients" class="ingredients-list"></ul>
+              <p id="no-ingredients" class="muted" style="display: none">
+                No ingredients listed.
+              </p>
+            </div>
+          </article>
+
+          <!-- Overall EcoScore -->
+          <article class="overall-ecoscore-card card">
+            <h3>Overall EcoScore</h3>
+            <div class="score-details">
+              <p>Score: <span id="overall-score">N/A</span>/100</p>
+              <p>
+                Sustainability Level: <span id="sustainability-level">N/A</span>
+              </p>
+              <p>
+                Environmental Concern Level: <span id="concern-level">N/A</span>
+              </p>
+            </div>
+          </article>
+
+          <!-- EcoScore donut -->
+          <article class="ecoscore-display card" aria-live="polite">
+            <h3>EcoScore</h3>
+            <div class="score-circle">
+              <span id="ecoscore-value" class="stat-value">N/A</span>
+            </div>
+            <p class="ecoscore-caption">
+              Score calculated based on the Environmental Impact
+            </p>
+          </article>
+        </section>
+
+        <!-- Environmental Impact Breakdown -->
+        <section class="environmental-impact-breakdown card">
+          <div class="impact-header">
+            <span>Factor</span>
+            <span>Result</span>
+          </div>
+
+          <ul class="environmental-factors-list">
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">🌍</span
+                ><span class="factor-label">Carbon Footprint</span>
+              </div>
+              <span id="carbon-footprint-value" class="factor-result">N/A</span>
+            </li>
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">💧</span
+                ><span class="factor-label">Water Consumption</span>
+              </div>
+              <span id="water-consumption-value" class="factor-result"
+                >N/A</span
+              >
+            </li>
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">⚡</span
+                ><span class="factor-label">Energy Usage</span>
+              </div>
+              <span id="energy-usage-value" class="factor-result">N/A</span>
+            </li>
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">🗑️</span
+                ><span class="factor-label">Waste & Pollution</span>
+              </div>
+              <span id="waste-pollution-value" class="factor-result">N/A</span>
+            </li>
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">🧪</span
+                ><span class="factor-label">Chemical Usage</span>
+              </div>
+              <span id="chemical-usage-value" class="factor-result">N/A</span>
+            </li>
+            <li class="factor-item">
+              <div class="factor-left">
+                <span class="factor-icon">♻️</span
+                ><span class="factor-label">Recyclability</span>
+              </div>
+              <span id="recyclability-value" class="factor-result">N/A</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- NEW: Recommendation card -->
+        <section
+          id="recommendation-card"
+          class="card recommendation-card"
+          aria-live="polite"
+        >
+          <div class="rec-head">
+            <div class="rec-icon">✅</div>
+            <div>
+              <h3 class="rec-title">Is it Recommended?</h3>
+              <div class="rec-sub">
+                LLM-guided verdict based on eco score & impact factors
+              </div>
+            </div>
+          </div>
+
+          <div class="rec-body">
+            <div class="rec-verdict-pill neutral" id="rec-verdict">
+              Analyzing…
+            </div>
+            <p class="rec-explain" id="rec-explain">
+              We’re reviewing this product’s footprint, usage and recyclability
+              to suggest a decision.
+            </p>
+            <div class="rec-meta">
+              <span id="rec-confidence" class="rec-confidence"
+                ></span
+              >
+              <div id="rec-tags" class="chips"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- AI-Powered Insights -->
+        <section class="ai-powered-insights card">
+          <h3>AI-Powered Insights</h3>
+          <ul id="insights-list">
+            <li class="muted">No insights available</li>
+          </ul>
+        </section>
+
+        <!-- Alternative Products Section -->
+        <section id="alternative-products" class="alternative-products card" aria-live="polite">
+          <h3>Alternative Products</h3>
+          <div id="alternative-products-container" class="alt-products-container">
+            <p class="muted">Loading alternatives…</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <span class="arr">© EcoBrand</span>
+        <span class="version">v1.3.0</span>
+      </footer>
+    </main>
+
+    <div
+      id="notifications-panel"
+      style="
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        z-index: 1000;
+        background-color: #333;
+        border: 1px solid #555;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        width: 300px;
+      "
+    >
+      <h4>Notifications</h4>
+      <hr style="border-color: #555" />
+      <div id="eco-score-alert"></div>
+      <div id="updates-news-list"></div>
+      <p id="no-notifications-message" style="color: #999; text-align: center">
+        No new notifications.
+      </p>
+    </div>
+
+    <script src="user-products.js"></script>
+    <script src="userNotifications.js"></script>
+    <script src="navigation.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="searchHistory.js"></script>
+  </body>
+</html>

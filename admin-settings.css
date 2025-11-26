@@ -1,0 +1,291 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171717;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 90px;
+}
+
+.line {
+    width: 220px;
+    position: relative;
+    top: 60px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.364);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(202, 195, 195, 0.436);
+    border-radius: 0px 15px 15px 0px;
+    background-color: #1d1d1d;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    position: absolute;
+    left: 0;
+}
+
+.li-button button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    font-size: 16px;
+    background-color: #17171700;
+    color: white;
+    position: relative;
+    top: 40px;
+    right: 30px;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.li-button button:focus {
+    background-color: #00d084;
+    color: black;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    width: 220px;
+    text-align: center;
+}
+
+.bottom button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.signout {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid white;
+    font-weight: 300;
+    transition: .3s ease-in;
+}
+
+.signout:hover {
+    background-color: #3d3b3b;
+}
+
+
+.management-text {
+    position: relative;
+    top: 38px;
+    right: 5px;
+    color: rgba(255, 255, 255, 0.733);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.manage-account-text {
+    color: rgba(255, 255, 255, 0.733);
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top: 38px;
+    right: 5px;
+}
+
+.others-text {
+    color: rgba(255, 255, 255, 0.733);
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top: 38px;
+    right: 5px;
+}
+
+.infos {
+    text-align: left;
+    position: relative;
+    top: -8px;
+    left: 280px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 0;
+    color: white;
+    margin-top:40px;
+}
+
+.info-title {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.725);
+}
+
+.settings-card {
+    position: relative;
+    top: -20px;
+    left: 280px;
+    width: 1180px;
+    height: 250px;
+    background-color:  #363333b3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cp {
+    font-size: 20px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.621);
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.settings-inside input {
+    width: 400px;
+    height: 20px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background-color: #363333b3;
+    color: white;
+}
+
+.settings-inside input::placeholder {
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.settings-inside button {
+    width: 150px;   
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 18px;
+    border-radius: 5px;
+}
+
+.save-changes {
+    background-color: #00d084;
+    font-weight: 590;
+    transition: 0.1s ease-in;
+}
+
+.save-changes:hover {
+    background-color: #05925e;
+}
+
+.delete {
+    background-color: #373434b3;
+    color: red;
+    transition: 0.1s ease-in;
+}
+
+.delete:hover {
+    background-color: #535050b3;
+    color: rgb(254, 45, 45);
+}
+
+.info-tips {
+    width: 400px;
+    position: relative;
+    top: -220px;
+    left: 760px;
+}
+
+.tips {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.info-tips li {
+    position: relative;
+    right: 21px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.604);
+    margin-bottom: 15px;
+    margin-top: 0;
+    margin-right: 25px;
+    list-style-type: circle;
+}
+
+.main-footer .version {
+    position: absolute;
+    bottom: -160px;
+    left: 950px;
+}
+
+.main-footer {
+    display: flex;
+    position: relative;
+    top: -70px;
+    left: 450px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.168);
+}
+
+.main-footer .arr {
+    position: absolute;
+    bottom: -160px;
+    left: -180px;
+}
+
+.focused {
+    background-color: #00d084 !important;
+    color: black !important;
+}
+
+.nav-item.active button {
+    background-color: #00d084;
+    color: black;
+    border-radius: 10px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 10px;
+    left: 280px;
+    font-size: 16px;
+    color: #ffffffa1;
+}

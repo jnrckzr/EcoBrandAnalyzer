@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="environmental-news.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>EcoBrand - Environmental News</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+     <nav>
+        <div class="sidebar">
+            <img src="Logo.png" class="logo"><label>EcoBrand</label> <hr class="line">
+            <div class="li-button">
+                <ul>
+                    <li class="nav-item" id="nav-home">
+                        <button class="home" data-page="homepage.html">
+                            <i class="fa fa-home" style="size: 16px; margin-right: 10px;"></i>Home
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-environmental-news">
+                        <button class="news" data-page="environmental-news.html">
+                            <i class="fa fa-newspaper-o" style="size: 16px; margin-right: 10px;"></i>Environmental News
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-profile">
+                        <button class="profile" data-page="profile.html">
+                            <i class="fa fa-user-circle-o" style="size: 16px; margin-right: 10px;"></i>Profile
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-categories">
+                        <button class="categories" data-page="categories.html">
+                            <i class="fa fa-recycle" style="size: 16px; margin-right: 10px;"></i>Categories
+                        </button>
+                    </li>
+                    <li class="nav-item" id="nav-settings">
+                        <button class="settings" data-page="settings.html">
+                            <i class="fa fa-gear" style="size: 16px; margin-right: 10px;"></i>Settings
+                        </button>
+                    </li><br>
+
+                    <div class="products-list">
+                        <h4 class="label_menu" aria-label="No products yet.">PRODUCTS</h4>
+                        <p id="noProductsMessage">No products yet.</p>
+                        <ul id="productList">
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="bottom">
+                <button class="new">+ New Product</button><br>
+                <button class="signout" data-page="logout">
+                    <i class="fa fa-sign-out" style="margin-right: 2px;"></i>Sign out
+                </button>
+            </div>
+        </div>
+    </nav>
+
+     <main class="main-content">
+        <div class="top-bar">
+            <div class="user-profile-dropdown">
+          <a href="settings.html" style="color: #aaa; margin-right: 5px;">
+            <i class="fa fa-gear" style="font-size: 20px;"></i>
+          </a>
+          <button id="notification-button" style="background: none; border: none; padding: 0; cursor: pointer; color: #aaa;">
+            <i class="fa fa-bell" style="font-size: 20px; margin-right: 10px;"></i>
+          </button>
+          <span id="topBarUserName" class="topUser">User</span>
+          </div>
+      </div>
+
+            <nav class="breadcrumb">
+                <span>User&#160;</span>
+                <span id="breadcrumbPath"></span>
+        </nav>
+            
+        <div class="infos">
+            <h1 class="title">Environmental News</h1>
+            <p class="info-title">Read, views, and always get updated with the latest environmental news.</p>
+            </div>
+
+            <div id="news-container" class="news-grid">
+    </div>
+     </main>
+
+      <div id="notifications-panel" style="display: none; position: absolute; top: 50px; right: 10px; z-index: 1000; background-color: #333; border: 1px solid #555; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 15px; width: 300px;">
+        <h4>Notifications</h4>
+        <hr style="border-color: #555;">
+        <div id="eco-score-alert"></div>
+        <div id="updates-news-list"></div>
+        <p id="no-notifications-message" style="color: #999; text-align: center;">No new notifications.</p>
+    </div>
+
+    <script src="sidebar.js"></script> 
+    <script src="profile.js"></script>
+    <script src="navigation.js"></script>
+    <script src="environment-news.js"></script>
+    <Script src="userNotifications.js"></Script>
+     <script src="searchHistory.js"></script>
+
+</body>
+</html>

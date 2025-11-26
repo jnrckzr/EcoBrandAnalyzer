@@ -1,0 +1,441 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171717;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 90px;
+}
+
+.line {
+    width: 220px;
+    position: relative;
+    top: 60px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.364);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(202, 195, 195, 0.436);
+    border-radius: 0px 15px 15px 0px;
+    background-color: #1d1d1d;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    position: absolute;
+    left: 0;
+}
+
+.li-button button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    font-size: 16px;
+    background-color: #17171700;
+    color: white;
+    position: relative;
+    top: 40px;
+    right: 30px;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+
+.li-button button:focus {
+    background-color: #00d084;
+    color: black;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    width: 220px;
+    text-align: center;
+}
+
+.bottom button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.new {
+    background-color: rgb(52, 210, 58);
+    color: black;
+    font-weight: 300;
+    border: 1px solid rgba(255, 255, 255, 0.488);
+    transition: .3s ease-in;
+}
+
+.new:hover {
+    background-color: rgb(47, 245, 54);
+    border: 1px solid black;
+}
+
+.signout {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid white;
+    font-weight: 300;
+    transition: .3s ease-in;
+}
+
+.signout:hover {
+    background-color: #3d3b3b;
+}
+
+.products-list {
+    position: absolute;
+    font-size: 16px;
+    top: 285px;
+    right: 15px;
+    width: 200px; /* Tiyakin na may nakatakdang lapad */
+}
+
+/* **KRITIKAL: Ito ang nag-a-apply ng scrollbar sa listahan** */
+#productList {
+    /* Override ang default 'ul' position */
+    position: relative; 
+    left: 0;
+    padding: 0; /* Alisin ang default padding ng UL */
+    margin: 0; /* Alisin ang default margin */
+
+    /* KRITIKAL: Limitahan ang taas. Ito ang magti-trigger ng scroll. */
+    max-height: 180px; 
+    
+
+    /* KRITIKAL: I-enable ang vertical scrollbar kapag lumampas sa taas */
+    overflow-y: auto; 
+
+    /* Iwasan ang horizontal scroll */
+    overflow-x: hidden;
+    
+}
+
+#productList::-webkit-scrollbar {
+    width: 6px; /* Gawing mas manipis */
+    
+}
+
+/* 2. Tinutukoy ang background color ng track (ang lugar kung saan gumagalaw ang scrollbar) */
+#productList::-webkit-scrollbar-track {
+    background: #171717; /* Darkest background */
+    border-radius: 10px;
+}
+
+/* 3. Tinutukoy ang kulay at hugis ng thumb (ang mismong bar) */
+#productList::-webkit-scrollbar-thumb {
+    background: #00d084; /* Kulay-abo na mas madilim */
+    border-radius: 10px;
+}
+
+/* 4. Kapag naka-hover ang mouse sa thumb */
+#productList::-webkit-scrollbar-thumb:hover {
+    background: #666; /* Bahagyang gagaan ang kulay */
+}
+
+#productList li {
+    /* Tiyakin na ang list item ay tama ang style */
+    display: block; 
+    padding: 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Tiyakin na ang `noProductsMessage` ay nasa loob pa rin ng `products-list` */
+#noProductsMessage {
+    margin-left: 20px;
+}
+/* ---------------------------- */
+
+.label_menu {
+    /* (Wala itong pagbabago) */
+    color: rgba(255, 255, 255, 0.451);
+    font-weight: normal;
+}
+
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5px;
+    left: 1280px;
+    padding: 15px;
+}
+
+ .topUser {
+    background-color: #39d185;
+    padding: 6px 22px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+ }
+
+
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -22px;
+    left: 280px;
+    font-size: 16px;
+    color: #ffffffa1;
+}
+
+.nav-item.active button {
+    background-color: #00d084; /* Ang gusto mong kulay green */
+    color: black; /* Kulay ng text para sa contrast */
+    border-radius: 10px;
+}
+
+.infos {
+    text-align: left;
+    position: relative;
+    top: -40px;
+    left: 280px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 0;
+    color: white;
+    margin-top:40px;
+}
+
+.info-title {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: rgba(255, 255, 255, 0.725);
+}
+
+.main-footer {
+    display: flex;
+    position: relative;
+    top: -70px;
+    left: 450px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.168);
+}
+
+.main-footer .arr {
+    position: absolute;
+    bottom: -160px;
+    left: -180px;
+}
+
+.main-footer .version {
+    position: absolute;
+    bottom: -160px;
+    left: 950px;
+}
+
+.settings-card {
+    position: relative;
+    top: -25px;
+    left: 280px;
+    width: 1180px;
+    height: 250px;
+    background-color:  #363333b3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cp {
+    font-size: 20px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.621);
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.settings-inside input {
+    width: 400px;
+    height: 20px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background-color: #363333b3;
+    color: white;
+}
+
+.settings-inside input::placeholder {
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.settings-inside button {
+    width: 150px;   
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 18px;
+    border-radius: 5px;
+}
+
+.save-changes {
+    background-color: #00d084;
+    font-weight: 590;
+    transition: 0.1s ease-in;
+}
+
+.save-changes:hover {
+    background-color: #05925e;
+}
+
+.delete {
+    background-color: #373434b3;
+    color: red;
+    transition: 0.1s ease-in;
+}
+
+.delete:hover {
+    background-color: #535050b3;
+    color: rgb(254, 45, 45);
+}
+
+.info-tips {
+    width: 400px;
+    position: relative;
+    top: -180px;
+    left: 760px;
+}
+
+.tips {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.info-tips li {
+    position: relative;
+    right: 21px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.604);
+    margin-bottom: 15px;
+    margin-top: 0;
+    margin-right: 25px;
+    list-style-type: circle;
+}
+
+/* Styles for individual notifications */
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Styling for the notification panel */
+#notifications-panel {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    z-index: 1000;
+    background-color: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none; /* Initially hide the panel */
+}
+
+#notifications-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #00d084;
+    text-align: center;
+}
+
+#notifications-panel hr {
+    border-color: #444;
+    margin-bottom: 15px;
+}
+
+#notifications-panel p {
+    color: #aaa;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Styles for individual notification items */
+.notification-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item h5 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.notification-item p {
+    margin: 0;
+    color: #aaa;
+    font-size: 12px;
+}
